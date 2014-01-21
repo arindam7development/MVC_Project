@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="AssignSubjBean" type="beans.AssignSubjBean"/>
+        <form-bean name="UpdateFacDetailBean" type="beans.UpdateFacDetailBean"/>
+        <form-bean name="StudFee" type="beans.StudFee"/>
+        <form-bean name="ShowFineBean" type="beans.ShowFineBean"/>
+        <form-bean name="InserFineBean" type="beans.InserFineBean"/>
+        <form-bean name="UpdateStudDetailBean" type="beans.UpdateStudDetailBean"/>
+        <form-bean name="addsubidbean" type="beans.addsubidbean"/>
+        <form-bean name="DeleteSubIdBean" type="beans.DeleteSubIdBean"/>
+        <form-bean name="entermarksbean" type="beans.entermarksbean"/>
+        <form-bean name="marks_enterbean" type="beans.marks_enterbean"/>
+        <form-bean name="branch_validbean" type="beans.branch_validbean"/>
+        <form-bean name="ComplainPageBean" type="beans.ComplainPageBean"/>
+        <form-bean name="AddBookBean" type="beans.AddBookBean"/>
+        <form-bean name="BookReturnBean" type="beans.BookReturnBean"/>
+        <form-bean name="ListBookBranchBean" type="beans.ListBookBranchBean"/>
+        <form-bean name="ListBookIdBean" type="beans.ListBookIdBean"/>
+        <form-bean name="ListBookIdBean" type="beans.ListBookIdBean"/>
+        <form-bean name="ListBookId" type="beans.ListBookId"/>
+        <form-bean name="BookListBean" type="beans.BookListBean"/>
+        <form-bean name="BookIssueBean" type="beans.BookIssueBean"/>
+        <form-bean name="FacultyAuthnBean" type="beans.FacultyAuthnBean"/>
+        <form-bean name="StudentAuthenBean" type="beans.StudentAuthenBean"/>
+        <form-bean name="facultyregisterbean" type="beans.facultyregisterbean"/>
+        <form-bean name="StudentDetailBean" type="beans.StudentDetailBean"/>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/stud_register.jsp" name="StudentDetailBean" path="/StudentDetail" scope="session" type="beans.StudentDetail">
+        <forward name="ok" path="/registered.jsp" />
+        </action>
+        <action input="/faculty_login.jsp" name="FacultyAuthnBean" path="/FacultyAuthen" scope="session" type="beans.FacultyAuthen">
+        <forward name="add" path="/AdminHomePage.jsp" />
+        </action>
+        <action input="/stud_login.jsp" name="StudentAuthenBean" path="/StudentAuthen" scope="session" type="beans.StudentAuthen" >
+        <forward name="correct" path="/StudentHomePage.jsp" />
+        <forward name="good" path="/FacultyHomePage.jsp" />
+        <forward name="exe" path="/Library.jsp" />
+        <forward name="okji" path="/FinanceHome.jsp" />
+        </action>
+        <action input="/IssueBooks.jsp" name="BookIssueBean" path="/BookIssue" scope="session" type="beans.BookIssue">
+        <forward name="nice" path="/IssueBooks.jsp" />
+        </action>
+        <action input="/BookList.jsp" name="BookListBean" path="/BookList" scope="session" type="beans.BookList">
+        <forward name="id" path="/ListBookId.jsp" />
+        <forward name="branch" path="/ListBookBranch.jsp" />
+        </action>
+        <action input="/ListBookId.jsp" name="ListBookIdBean" path="/ListBookId" scope="session" type="beans.ListBookId">
+        <forward name="pop" path="/BookWithId.jsp" />
+        </action>
+        <action input="/AddRemBooks.jsp" path="/DeleteBook" type="beans.DeleteBook" />
+        <action input="/ListBookBranch" name="ListBookBranchBean" path="/ListBookBranch" scope="session" type="beans.ListBookBranch">
+        <forward name="po" path="/BooksWithBranch.jsp" />
+        </action>
+        <action input="/marks1.jsp" name="branch_validbean" path="/branch_valid" scope="session" type="beans.branch_valid">
+        <forward name="mila" path="/marks2.jsp" />
+        </action>
+        <action input="/adminbooks.jsp" name="addsubidbean" path="/addsubid" scope="session" type="beans.addsubid"/>
+        <action input="/adminbooks.jsp" path="/DeleteSubId" type="beans.DeleteSubId"/>
+        <action input="/updatemarks.jsp" name="entermarksbean" path="/entermarks" scope="session" type="beans.entermarks">
+        <forward name="main" path="/calci.jsp" />
+        </action>
+        <action input="/" name="marks_enterbean" path="/marks_enter" scope="session" type="beans.marks_enter"/>
+        <action input="/Complain.jsp" name="ComplainPageBean" path="/ComplainPage" scope="session" type="beans.ComplainPage"/>
+        <action input="/AddRemBooks.jsp" name="AddBookBean" path="/AddBook" scope="session" type="beans.AddBook"/>
+        <action input="/AddRemBooks.jsp" path="/DeleteBook" type="beans.DeleteBook"/>
+        <action input="/BookReturn.jsp" name="BookReturnBean" path="/BookReturn" scope="session" type="beans.BookReturn">
+        <forward name="fail" path="/del_lib_fine.jsp" />
+        </action>
+        <action input="/faculty_register.jsp" name="facultyregisterbean" path="/FacultyRegister" scope="session" type="beans.FacultyRegister">
+        <forward name="pwd" path="/AdminHomePage.jsp" />
+        </action>
+        <action input="/marks2.jsp" path="/updatemarks123" type="beans.updatemarks123">
+        <forward name="lol" path="/updatemarks.jsp" />
+        </action>
+        <action input="/updatestudinfo.jsp" name="UpdateStudDetailBean" path="/UpdateStudDetail" scope="session" type="beans.UpdateStudDetail">
+        <forward name="upd" path="/updjsp.jsp" />
+        </action>
+        <action input="/ShowFine.jsp" name="ShowFineBean" path="/ShowFine" scope="session" type="beans.ShowFine">
+        <forward name="mar" path="/finedet.jsp" />
+        </action>
+        <action input="/upd_facinfo.jsp" name="UpdateFacDetailBean" path="/UpdateFacDetail" scope="session" type="beans.UpdateFacDetail">
+        <forward name="fupd" path="/facupd.jsp" />
+        </action>
+        <action input="/assignsubj.jsp" name="AssignSubjBean" path="/AssignSubj" scope="session" type="beans.AssignSubj">
+        <forward name="succ" path="/assignsubj.jsp" />
+        </action>
+        <action input="/attendance.jsp" name="branch_validbean" path="/att_valid" scope="session" type="beans.att_valid">
+        <forward name="mila_att" path="/increment_att.jsp" />
+        </action>
+        <action input ="/del_lib_fine.jsp" path="/del_fine" type="beans.del_fine"/>
+        <action input ="/assignsubj.jsp" path="/DeleteAssignSubj" type="beans.DeleteAssignSubj"/>
+        <action input="/removefacaccount.jsp" path="/DeleteFacAccount" type="beans.DeleteFacAccount"/>
+        <action input="/removestudaccount.jsp" path="/DeleteStudAccount" type="beans.DeleteStudAccount"/>
+        <action input="/ComplaintBox.jsp" path="/DeleteComplain" type="beans.DeleteComplain"/>
+        <action input="/StudFee.jsp" name="StudFee" path="/StudFees" scope="session" type="beans.StudFees"/>
+        <action path="/deletefine" type="beans.deletefine"/>
+        <action input="/InserFine.jsp" name="InserFineBean" path="/InsertFine" scope="session" type="beans.InsertFine"/>
+
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

@@ -1,0 +1,21 @@
+SMAP
+faculty_005flogin_jsp.java
+JSP
+*S JSP
+*F
++ 0 faculty_login.jsp
+faculty_login.jsp
+*L
+5,47:66
+51:143,8
+52:151
+52:188,5
+52,2:154
+53:206,5
+53,2:158
+54:224,6
+54,2:162
+56:164,3
+57,3:167
+59,11:115
+*E
